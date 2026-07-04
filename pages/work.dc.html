@@ -156,6 +156,16 @@ a{color:inherit;}
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { pwd: "", unlocked: false, error: false };
+  componentDidMount() {
+    try {
+      // sessionStorage keeps the unlock only for the current browsing session:
+      // navigating around the site stays unlocked, but the next visit (new tab /
+      // reopened browser) asks for the password again.
+      if (sessionStorage.getItem("axenova_work_unlocked") === "1") {
+        this.setState({ unlocked: true });
+      }
+    } catch (e) {}
+  }
   renderVals() {
     return {
       locked: !this.state.unlocked,
@@ -169,6 +179,7 @@ class Component extends DCLogic {
   }
   submit() {
     if (this.state.pwd.trim() === "1612") {
+      try { sessionStorage.setItem("axenova_work_unlocked", "1"); } catch (e) {}
       this.setState({ unlocked: true, error: false });
     } else {
       this.setState({ error: true });
