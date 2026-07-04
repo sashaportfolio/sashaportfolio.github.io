@@ -57,6 +57,8 @@ a{color:inherit;}
     document.body.classList.add('page-exit');
     setTimeout(function(){window.location.href=href;},300);
   },true);
+  // Back/forward (incl. mobile bfcache restore): clear the exit animation so the restored page shows normally
+  window.addEventListener('pageshow',function(){document.body.classList.remove('page-exit');});
 })();
 </script>
 </helmet>
@@ -84,7 +86,7 @@ a{color:inherit;}
 
     <img src="../assets/scribble/squiggle3.png" alt="" aria-hidden="true" style="position:absolute;right:-10px;top:-6px;width:150px;opacity:.85;pointer-events:none;" />
   </section>
-  <section style="padding:44px 0 50px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px;">
+  <section style="padding:44px 0 18px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px;">
     <div>
       <div style="font-family:'Fira Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid #111;padding-bottom:8px;margin-bottom:14px;">Background</div>
       <p class="bigcap" style="font-size:15px;line-height:1.66;">В рамках рекламной кампании для бренда SNICKERS была разработана креативная концепция вовлекающего спецпроекта «Сникерсни, и ты снова супер-ты». Также были сделаны POSM и KV.</p>
@@ -102,7 +104,7 @@ a{color:inherit;}
   </section>
 </div>
   <!-- ===== GALLERY ===== -->
-  <section data-screen-label="Gallery" style="background:#111;padding:50px 0;">
+  <section data-screen-label="Gallery" style="background:#111;padding:34px 0;">
     <div style="max-width:900px;margin:0 auto;padding:0 40px;">
       <div class="m3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;">
         <img src="../assets/cases/super-you-again/g1-sm.jpg" alt="" style="width:100%;height:auto;display:block;" />

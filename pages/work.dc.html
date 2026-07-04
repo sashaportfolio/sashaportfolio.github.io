@@ -55,6 +55,8 @@ a{color:inherit;}
     document.body.classList.add('page-exit');
     setTimeout(function(){window.location.href=href;},300);
   },true);
+  // Back/forward (incl. mobile bfcache restore): clear the exit animation so the restored page shows normally
+  window.addEventListener('pageshow',function(){document.body.classList.remove('page-exit');});
 })();
 </script>
 </helmet>
@@ -154,13 +156,6 @@ a{color:inherit;}
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { pwd: "", unlocked: false, error: false };
-  componentDidMount() {
-    try {
-      if (localStorage.getItem("axenova_work_unlocked") === "1") {
-        this.setState({ unlocked: true });
-      }
-    } catch (e) {}
-  }
   renderVals() {
     return {
       locked: !this.state.unlocked,
@@ -174,7 +169,6 @@ class Component extends DCLogic {
   }
   submit() {
     if (this.state.pwd.trim() === "1612") {
-      try { localStorage.setItem("axenova_work_unlocked", "1"); } catch (e) {}
       this.setState({ unlocked: true, error: false });
     } else {
       this.setState({ error: true });
