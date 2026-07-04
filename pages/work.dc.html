@@ -39,6 +39,24 @@ a{color:inherit;}
   [style*="clamp(38px, 6.4vw, 84px)"]{font-size:30px !important;}
 }
 </style>
+<style id="__anim">
+@keyframes moveOutLeft{from{transform:translateX(0);opacity:1;}to{transform:translateX(-80px);opacity:0;}}
+.page-exit{animation:moveOutLeft 300ms ease-out forwards;}
+</style>
+<script>
+(function(){
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href]');
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href||href.charAt(0)==='#')return;
+    if(a.target==='_blank'||/^(https?:|mailto:|tel:)/i.test(href))return;
+    e.preventDefault();
+    document.body.classList.add('page-exit');
+    setTimeout(function(){window.location.href=href;},300);
+  },true);
+})();
+</script>
 </helmet>
 <div style="background:#ffffff;color:#111111;font-family:'EB Garamond',Georgia,serif;min-height:100vh;">
 <div style="max-width:1140px;margin:0 auto;padding:30px 40px 0;">
