@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1160">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Fira+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#ffffff;}
+a{color:inherit;}
+.dropcap::first-letter{font-family:'Cormorant',serif;font-weight:500;font-size:5.4em;line-height:.72;float:left;padding:8px 12px 0 0;}
+.bigcap::first-letter{font-family:'Cormorant',serif;font-weight:600;font-size:6.6em;line-height:.62;float:left;padding:6px 14px 0 0;color:#111;}
+</style>
+<style id="__resp">
+@media (max-width: 760px){
+  /* Keep the DESKTOP newspaper layout on mobile — only fit it to the screen width */
+  [style*="max-width: 1140px"]{padding-left:14px !important;padding-right:14px !important;}
+  /* black awards band spans full width without overflowing narrow padding */
+  [style*="margin: 56px -40px 0"]{margin-left:-14px !important;margin-right:-14px !important;}
+  /* hide the vertical PORTFOLIO / EST side text on phones */
+  [style*="writing-mode: vertical-rl"]{display:none !important;}
+}
+</style>
+</helmet>
+<div style="background: #ffffff; color: #111111; font-family: 'EB Garamond',Georgia,serif; min-height: 100vh; padding: 0 0 0 0; position: relative">
+
+
+
+<!-- footer band -->
+<div style="max-width:1140px;margin:0 auto;padding:30px 40px 60px;position:relative;">
+
+  <!-- ===== TOP / NAV / DATELINE ===== -->
+  <div data-screen-label="Masthead" data-speaker-notes="Газетная шапка — спецвыпуск">
+    <nav style="display:flex;justify-content:space-between;align-items:center;font-family:'Fira Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#111;">
+      <div style="display:flex;gap:26px;">
+        <a href="#about" style="text-decoration:none;">Обо мне</a>
+        <a href="#works" style="text-decoration:none;">Мои работы</a>
+      </div>
+      <div style="display:flex;gap:26px;">
+        <a href="https://www.behance.net/sashaGetc/resume" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid #111;padding-bottom:1px;">CV</a>
+        <a href="https://t.me/sashaGetc" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid #111;padding-bottom:1px;">TG</a>
+      </div>
+    </nav>
+    <div style="border-top:1px solid #111;margin-top:12px;"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;font-family:'Fira Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8a8a8a;padding:8px 0;">
+      <span>Спецвыпуск</span>
+      <span>Том&nbsp;I — №&nbsp;1</span>
+      <span>Moscow · Est. 2026</span>
+    </div>
+    <div style="border-top:1px solid #111;"></div>
+  </div>
+
+  <!-- ===== MASTHEAD ===== -->
+  <header style="position:relative;padding:30px 0 0;">
+    
+    <div style="position:absolute;left:0;top:46px;writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Fira Mono',monospace;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:#9a9a9a;">Portfolio</div>
+    <div style="position:absolute;right:0;top:46px;writing-mode:vertical-rl;font-family:'Fira Mono',monospace;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:#9a9a9a;">Est. 2026</div>
+    <h1 style="font-family:'Cormorant',serif;font-weight:400;font-size:clamp(44px,11.4vw,150px);line-height:.9;letter-spacing:.01em;text-align:center;text-transform:uppercase;white-space:nowrap;">Axenova News</h1>
+    <div style="border-top:3px solid #111;border-bottom:1px solid #111;height:5px;margin-top:18px;"></div>
+    <!-- typographic byline -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-top:18px;">
+      <div style="flex:1;border-top:1px solid #111;"></div>
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="#111"><path d="M12 0 L13.4 10.6 L24 12 L13.4 13.4 L12 24 L10.6 13.4 L0 12 L10.6 10.6 Z"></path></svg>
+      <div style="font-family:'Cormorant',serif;font-weight:500;font-size:clamp(17px,2.5vw,32px);letter-spacing:.4em;text-transform:uppercase;white-space:nowrap;">Creative&nbsp;Copywriter</div>
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="#111"><path d="M12 0 L13.4 10.6 L24 12 L13.4 13.4 L12 24 L10.6 13.4 L0 12 L10.6 10.6 Z"></path></svg>
+      <div style="flex:1;border-top:1px solid #111;"></div>
+    </div>
+    <!-- vital stats -->
+    <div class="m-vitals" style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #111;border-bottom:1px solid #111;margin-top:18px;">
+      <div style="padding:14px 16px;border-right:1px solid #d6d6d6;"><div style="font-family:'Fira Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#9a9a9a;">Имя</div><div style="font-family:'Cormorant',serif;font-weight:600;font-size:19px;margin-top:2px;">Аксенова Александра</div></div>
+      <div style="padding:14px 16px;border-right:1px solid #d6d6d6;"><div style="font-family:'Fira Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#9a9a9a;">Локация</div><div style="font-family:'Cormorant',serif;font-weight:600;font-size:19px;margin-top:2px;">Москва, Россия</div></div>
+      <div style="padding:14px 16px;"><div style="font-family:'Fira Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#9a9a9a;">Опыт</div><div style="font-family:'Cormorant',serif;font-weight:600;font-size:19px;margin-top:2px;">3,5 года</div></div>
+    </div>
+  </header>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" data-screen-label="About" data-speaker-notes="Обо мне" style="padding:44px 0 0;position:relative;">
+    
+    
+    <!-- headline row -->
+    <div style="display: grid; grid-template-columns: 1.32fr 0.68fr; gap: 38px; align-items: start; position: relative">
+      
+      <div style="padding-top: 4px; position: relative">
+        <h2 style="font-family: 'Cormorant',serif; font-weight: 300; font-size: clamp(38px,6.4vw,84px); line-height: .96; letter-spacing: -.005em; position: relative">Это не просто портфолио, <span style="font-style: italic; font-weight: 400; position: relative"><br>а полноценный дайджест</span></h2>
+        <div style="font-family:'Fira Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9a9a9a;margin-top:18px;">Москва · 2026</div><div style="font-family: 'Cormorant',serif; font-weight: 400; font-style: italic; font-size: clamp(19px,2.3vw,27px); line-height: 1.32; margin-top: 14px; max-width: 560px; width: 581px; height: 110px">С&nbsp;моими работами, мыслями и&nbsp;опытом&nbsp;— погрузитесь в&nbsp;мой креативный мир&nbsp;<div>с AXENOVA&nbsp;NEWS.</div></div>
+        
+      </div><figure style="align-self:start;padding:14px 18px 0;margin:0;">
+        
+      <img src="assets/home/about-bw2.jpg" alt="Аксенова Александра" style="width:100%;display:block;background:#eee;transform:rotate(-5deg);box-shadow:0 14px 34px rgba(0,0,0,.18);"></figure>
+    </div>
+
+    <!-- 3-column body -->
+    <div style="border-top:1px solid #111;margin-top:28px;padding-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
+      
+      <p class="bigcap" style="font-family:'Fira Mono',monospace;font-size:13px;line-height:1.74;padding-right:40px;border-right:1px solid #e0e0e0;">Я&nbsp;работаю в&nbsp;креативе уже около трех лет, за&nbsp;это время я&nbsp;прошла путь от&nbsp;стажера в&nbsp;RTA до&nbsp;мидл-копирайтера в&nbsp;BBDO.</p><p style="font-family:'Fira Mono',monospace;font-size:13px;line-height:1.74;padding:0 40px;border-right:1px solid #e0e0e0;">Мне удалось поработать с&nbsp;крупными брендами: MARS (Snickers, Twix, Orbit, M&amp;M's, Коркунов, Sheba, Whiskas, Cesar, Perfect&nbsp;Fit, Pedigree), Т-Банк, СБЕР, Газпромбанк, Открытие, Финам, Магнит, Пятерочка, АТОЛ, IQOS, Здравсити.</p><p style="font-family:'Fira Mono',monospace;font-size:13px;line-height:1.74;padding-left:40px;">Я&nbsp;придумываю идеи для рекламных кампаний, создаю концепции и&nbsp;спецпроекты и&nbsp;реализую их в&nbsp;самых разных форматах: от&nbsp;лайна до&nbsp;лендинга.</p>
+      
+    </div>
+
+    <!-- pull quote band -->
+    <div style="border-top:1px solid #111;border-bottom:1px solid #111;margin-top:30px;padding:34px 0;text-align:center;position:relative;">
+      <span style="font-family:'Cormorant',serif;font-size:130px;line-height:0;color:#111;position:absolute;left:50%;transform:translateX(-50%);top:48px;opacity:.12;">“</span>
+      <p style="font-family:'Cormorant',serif;font-style:italic;font-weight:400;font-size:clamp(24px,4.4vw,50px);line-height:1.18;max-width:920px;margin:0 auto;position:relative;">Мне нравится, что мои слова, собранные из&nbsp;обычных&nbsp;букв, могут влиять на людей и доносить&nbsp;смыслы</p>
+      <div style="font-family:'Fira Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#9a9a9a;margin-top:18px;">о том, что нравится в работе копирайтером</div>
+    </div>
+
+    <!-- tg footnote -->
+    <div style="display: flex; align-items: center; gap: 18px; margin-top: 26px; font-family: 'Cormorant',serif; font-size: clamp(19px,2.4vw,28px); font-style: italic; line-height: 1.36; position: relative">
+      
+      
+    <p style="text-align: left; width: 646px; height: 97px; position: relative">А&nbsp;еще я&nbsp;веду тг-канал, <a href="https://t.me/creativecabanchik" target="_blank" rel="noopener" style="border-bottom:1px solid #111;text-decoration:none;">@creativecabanchik</a>, где рассказываю о&nbsp;рекламе, показываю классные кейсы и&nbsp;нашептываю неожиданные инсайты.</p></div>
+
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section data-screen-label="Education" data-speaker-notes="Образование" style="padding:54px 0 0;position:relative;">
+    
+    <img src="assets/deco/e06.png" alt="" aria-hidden="true" style="position:absolute;left:-26px;bottom:20px;width:70px;transform:rotate(-4deg);pointer-events:none;z-index:1;">
+    
+    <div style="display:flex;align-items:center;gap:18px;">
+      <div style="flex:1;border-top:1px solid #111;"></div>
+      <img src="assets/scribble/star.png" alt="" aria-hidden="true" style="width:30px;flex:none;">
+      <h2 style="font-family:'Cormorant',serif;font-weight:400;font-size:clamp(26px,4.2vw,48px);text-transform:uppercase;letter-spacing:.04em;">Образование</h2>
+      <div style="flex:1;border-top:1px solid #111;"></div>
+    </div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:26px;">
+      <div style="padding: 6px 26px 26px 0; border-right: 1px solid #e0e0e0; position: relative">
+        <div style="font-family:'Cormorant',serif;font-weight:400;font-size:42px;line-height:1;">2024</div>
+        <div style="font-family:'Fira Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;">Финансовый университет при Правительстве РФ</div>
+        <div style="font-style:italic;font-size:14px;margin-top:6px;color:#444;">«Реклама и связи с общественностью»</div>
+        <p style="font-size: 16px; line-height: 1.6; margin-top: 12px">В вузе я состояла в студенческих организациях, выступала на конференциях, писала статьи&nbsp;</p><div>и создавала контент для соц.сетей.&nbsp;</div><p></p><div><br></div><div>А еще досконально изучила социологию, PR, историю медиа и маркетинг (и даже теорию пропаганды и агитации).</div><p></p>
+      </div>
+      <div style="padding: 6px 26px 26px; border-right: 1px solid #e0e0e0; position: relative">
+        <div style="font-family:'Cormorant',serif;font-weight:400;font-size:42px;line-height:1;">2024</div>
+        <div style="font-family:'Fira Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;">VK Education</div>
+        <div style="font-style:italic;font-size:14px;margin-top:6px;color:#444;">«Маркетинг, коммуникации и креатив в IT»</div>
+        <p style="font-size: 16px; line-height: 1.6; margin-top: 12px">Прокачала свои знания в маркетинге, реализовала проект в команде для сервиса VK, занималась контент-стратегией и написанием текстов.&nbsp;</p><div><br></div><div>Была лидером команды и защищала концепцию перед руководителями Яндекса&nbsp;<div>и VK.</div></div><p></p>
+      </div>
+      <div style="padding:6px 0 26px 26px;">
+        <div style="font-family: 'Cormorant',serif; font-weight: 400; font-size: 42px; line-height: 1; position: relative">2025</div>
+        <div style="font-family:'Fira Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;">Wordshop</div>
+        <div style="font-style:italic;font-size:14px;margin-top:6px;color:#444;">«Креатив: копирайтинг и арт-дирекшен»</div>
+        <p style="font-size: 16px; line-height: 1.6; margin-top: 12px">В Wordshop я усилила свои скиллы в креативе&nbsp;</p><div>на годовом курсе, где углубилась в монтаж, написание сценариев, арт-дирекшен, нейминг&nbsp;<div>и копирайтинг. Мои работы были признаны лучшими на курсе кураторами и приглашенными экспертами.&nbsp;</div></div><p></p><div><br></div><div>Во время обучения я поучаствовала в креативных фестивалях и конкурсах, где наша команда получила признание. А еще написала свой первый сценарий для сериала.</div><p></p>
+      </div>
+    </div><div style="border-top:1px solid #e0e0e0;display:grid;grid-template-columns:repeat(3,1fr);">
+      
+      <div style="padding:24px 26px 6px 0;border-right:1px solid #e0e0e0;">
+        <div style="font-family:'Cormorant',serif;font-weight:400;font-size:42px;line-height:1;">2026</div>
+        <div style="font-family:'Fira Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;">mads</div>
+        <div style="font-style:italic;font-size:14px;margin-top:6px;color:#444;">«Концептуальное мышление: как выигрывать фестивали»</div>
+        <p style="font-size: 16px; line-height: 1.6; margin-top: 12px">В mads я от и до изучила тонкости создания крутого фестивального креатива. Мои работы получили признание на российских и международных фестивалях рекламы и дизайна Young Ones , D&amp;AD и д.р.</p>
+      </div><div style="padding: 24px 26px 6px; border-right: 1px solid #e0e0e0; position: relative">
+        <div style="font-family: 'Cormorant',serif; font-weight: 400; font-size: 42px; line-height: 1; position: relative">2026</div>
+        <div style="font-family:'Fira Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;">AI&amp;SENSE</div>
+        <div style="font-style:italic;font-size:14px;margin-top:6px;color:#444;">«Визуальное мышление и AI-концептинг»</div>
+        <p style="font-size: 16px; line-height: 1.6; margin-top: 12px">В AI&amp;SENSE я усилила навыки визуального мышления и работы с искусственным интеллектом и научилась использовать ИИ для рабочих задач в креативе.&nbsp;</p><div><br></div><div>Мы с командой прошли путь от идеи до полноценного концепта рекламной кампании и презентовали его экспертам в области ИИ.</div><p></p>
+      </div>
+      <figure style="padding: 24px 0 0 26px; display: flex; align-items: center; justify-content: center; position: relative">
+        <img src="assets/home/education-bw.jpg" alt="Александра" style="width:88%;display:block;background:#eee;transform:rotate(3.5deg);box-shadow:0 8px 22px rgba(0,0,0,.14);">
+      </figure>
+    </div>
+    
+  </section>
+
+  <!-- ===== WORKS ===== -->
+  <section id="works" data-screen-label="Works" data-speaker-notes="Мои последние работы" style="padding: 56px 0 0; position: relative">
+    <div style="background:#111;color:#fff;text-align:center;padding:18px 8px;">
+      <div style="font-family:'Fira Mono',monospace;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#9a9a9a;">Главные материалы номера</div>
+      <h2 style="font-family:'Cormorant',serif;font-weight:400;font-size:clamp(24px,3.6vw,44px);text-transform:uppercase;letter-spacing:.03em;margin-top:2px;">Мои последние работы</h2>
+    </div>
+    <div style="padding: 32px 0 0; position: relative">
+      <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; position: relative">
+        <a href="pages/beauty-pit-stop.dc.html" style="text-decoration:none;display:block;"><img src="assets/home/work-beauty-pit-stop.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);background:#eee;"><h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.04;margin-top:12px;">Beauty Pit Stop</h3></a>
+        <a href="pages/femini-academy.dc.html" style="text-decoration: none; display: block; position: relative"><img src="assets/home/work-femini-academy.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);background:#eee;"><h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.04;margin-top:12px;">Femini Academy</h3></a>
+        <a href="pages/face-of-loreal.dc.html" style="text-decoration:none;display:block;"><img src="assets/home/work-face-of-loreal.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);background:#eee;"><h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.04;margin-top:12px;">The Face of L'Oréal&nbsp;Paris</h3></a>
+        <a href="pages/zero-doubt.dc.html" style="text-decoration:none;display:block;"><img src="assets/home/work-zero-doubt.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);background:#eee;"><h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.04;margin-top:12px;">Zero Doubt</h3></a>
+        <a href="pages/home-sharing.dc.html" style="text-decoration:none;display:block;"><img src="assets/home/work-home-sharing.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);background:#eee;"><h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.04;margin-top:12px;">Home Sharing</h3></a>
+        <a href="pages/nothing-to-hide.dc.html" style="text-decoration:none;display:block;"><img src="assets/home/work-nothing-to-hide.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);background:#eee;"><h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.04;margin-top:12px;">Nothing to Hide</h3></a>
+        <a href="pages/barkcination.dc.html" style="text-decoration:none;display:block;"><img src="assets/home/work-barkcination.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);background:#eee;"><h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.04;margin-top:12px;">Barkcination</h3></a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #111;border-bottom:1px solid #111;margin-top:32px;padding:20px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 30px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#111"><path d="M12 0 L13.4 10.6 L24 12 L13.4 13.4 L12 24 L10.6 13.4 L0 12 L10.6 10.6 Z"></path></svg>
+        <h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:clamp(20px,2.6vw,30px);text-transform:uppercase;letter-spacing:.03em;">Еще больше моих работ</h3>
+      </div>
+      <div style="display:flex;gap:28px;font-family:'Fira Mono',monospace;font-size:12px;letter-spacing:.04em;">
+        <a href="pages/festival.dc.html" style="text-decoration:none;border-bottom:1px solid #111;padding-bottom:2px;">Фестивальные работы →</a>
+        <a href="pages/work.dc.html" style="text-decoration:none;border-bottom:1px solid #111;padding-bottom:2px;">Рабочие проекты →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRESS ===== -->
+  <section data-screen-label="Press" data-speaker-notes="Что обо мне пишут" style="padding:54px 0 0;position:relative;">
+    <div style="display:flex;align-items:center;gap:18px;">
+      <div style="flex:1;border-top:1px solid #111;"></div>
+      <h2 style="font-family:'Cormorant',serif;font-weight:400;font-size:clamp(24px,3.8vw,44px);text-transform:uppercase;letter-spacing:.04em;position:relative;">Что обо мне пишут</h2>
+      <div style="flex:1;border-top:1px solid #111;"></div>
+    </div>
+    
+    <div class="m-press" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:28px;">
+      <div style="padding:0 22px;border-right:1px solid #e0e0e0;text-align:center;">
+        <div style="height:92px;display:flex;align-items:center;justify-content:center;"><img src="assets/home/logo-mads.png" alt="mads" style="height:80px;width:auto;display:block;"></div>
+        <a href="https://www.instagram.com/p/DYU3zjyiB5Y/" target="_blank" rel="noopener" style="display:block;font-family:'Cormorant',serif;font-style:italic;font-size:17px;line-height:1.3;margin-top:14px;border-top:1px solid #e0e0e0;padding-top:14px;">«9 наград на Young Ones — 3 металла и 6 меритов»</a>
+      </div>
+      <div style="padding:0 22px;border-right:1px solid #e0e0e0;text-align:center;">
+        <div style="height:92px;display:flex;align-items:center;justify-content:center;"><img src="assets/home/logo-mads.png" alt="mads" style="height:80px;width:auto;display:block;"></div>
+        <a href="https://www.instagram.com/p/DaSWSX7CJop/?igsh=emk0bWw5NWR4ancx" target="_blank" rel="noopener" style="display:block;font-family:'Cormorant',serif;font-style:italic;font-size:17px;line-height:1.3;margin-top:14px;border-top:1px solid #e0e0e0;padding-top:14px;">«Работы студентов mads — публикация в Instagram»</a>
+      </div>
+      <div style="padding:0 22px;border-right:1px solid #e0e0e0;text-align:center;">
+        <div style="height:92px;display:flex;align-items:center;justify-content:center;"><img src="assets/home/press-redapple.png" alt="Red Apple" style="max-width:100px;max-height:90px;"></div>
+        <a href="https://festival.ru/winners/?year=2025&amp;konkurs_id=33&amp;work_id=9758&amp;cat_id=6444" target="_blank" rel="noopener" style="display:block;font-family:'Cormorant',serif;font-style:italic;font-size:17px;line-height:1.3;margin-top:14px;border-top:1px solid #e0e0e0;padding-top:14px;">«Победители Red Apple 2025 в категории Design»</a>
+      </div>
+      <div style="padding:0 22px;text-align:center;">
+        <div style="height:92px;display:flex;align-items:center;justify-content:center;"><img src="assets/home/press-wordshop-logo.png" alt="Wordshop" style="max-width:150px;max-height:80px;"></div>
+        <a href="https://wordshop.academy/luchshie-raboty-kursa-innovacionnyj-kreativ-2025/" target="_blank" rel="noopener" style="display:block;font-family:'Cormorant',serif;font-style:italic;font-size:17px;line-height:1.3;margin-top:14px;border-top:1px solid #e0e0e0;padding-top:14px;">«Лучшие работы курса „Инновационный креатив 2025“»</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECOMMENDATIONS ===== -->
+  <section data-screen-label="Recommendations" data-speaker-notes="Рекомендации и отзывы" style="padding:54px 0 0;position:relative;">
+    
+    
+    <div style="display:flex;align-items:center;gap:18px;">
+      <div style="flex:1;border-top:1px solid #111;"></div>
+      <h2 style="font-family:'Cormorant',serif;font-weight:400;font-size:clamp(22px,3.6vw,42px);text-transform:uppercase;letter-spacing:.04em;text-align:center;">Рекомендации и отзывы</h2>
+      <div style="flex:1;border-top:1px solid #111;"></div>
+    </div>
+    <div style="text-align:center;font-family:'Fira Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9a9a9a;margin-top:12px;">Мнение экспертов, коллег и лидеров креативной индустрии</div>
+    
+    <div class="m-recs" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:30px;">
+      <div style="padding: 0 34px; border-right: 1px solid #e0e0e0; text-align: center; position: relative">
+        <img src="assets/home/rec-anastasia.jpg" alt="Анастасия Пофтальная" style="width:132px;height:132px;border-radius:50%;object-fit:cover;display:block;margin:0 auto;filter:grayscale(1) contrast(1.04);background:#eee;">
+        <h3 style="font-family:'Cormorant',serif;font-weight:600;font-size:23px;margin-top:18px;line-height:1.08;">Анастасия Пофтальная</h3>
+        <div style="font-family:'Fira Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9a9a;margin-top:6px;">Production Lead in Creative Marketing Team</div>
+        <p style="font-size:13px;line-height:1.74;margin-top:18px;text-align:left;">Я была руководителем Саши в digital-агентстве RTA около 2 лет. Чтобы получить должность креативного стажера, она прошла отбор более чем из 60 претендентов. Ее тестовое задание сразу привлекло мое внимание.</p>
+        <p style="font-size:13px;line-height:1.74;margin-top:12px;text-align:left;">Саша быстро учится и задает правильные вопросы. Она погружается в задачу, и это вовлечение чувствуется на всех этапах работы над проектом. С ней легко работать, обратная связь мотивирует ее, а не наоборот, что особенно важно в креативной сфере.</p>
+      <img src="assets/deco/e03.png" alt="" aria-hidden="true" style="position: absolute; top: -14px; width: 74px; transform: rotate(10deg); pointer-events: none; z-index: 1; left: 189px"></div>
+      <div style="padding: 0 34px; border-right: 1px solid #e0e0e0; text-align: center; position: relative">
+        <img src="assets/home/rec-alexey.jpg" alt="Алексей Федоров" style="width:132px;height:132px;border-radius:50%;object-fit:cover;display:block;margin:0 auto;filter:grayscale(1) contrast(1.04);background:#eee;">
+        <h3 style="font-family:'Cormorant',serif;font-weight:600;font-size:23px;margin-top:18px;line-height:1.08;">Алексей Федоров</h3>
+        <div style="font-family:'Fira Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9a9a;margin-top:6px;">Executive Creative Director, BBDO</div>
+        <p style="font-size:13px;line-height:1.74;margin-top:18px;text-align:left;">Саша действительно производит впечатление своим серьезным отношением к работе, она очень инициативна, никогда не отсиживается в стороне, открыта к новому. Мне кажется, Саша — командный игрок, но при этом она хорошо справляется и в одиночку.</p><p></p>
+        <p style="font-size:13px;line-height:1.74;margin-top:12px;text-align:left;">Саша выделяется творческим подходом и свежими идеями. Она максималист: если надо принести 5 идей, она принесет 10. Внимание к деталям, перфекционизм — то, что ее отличает.</p>
+      <img src="assets/deco/e17.png" alt="" aria-hidden="true" style="position: absolute; left: 182px; top: -14px; width: 57px; transform: rotate(-6deg); pointer-events: none; z-index: 1; height: 40px"></div>
+      <div style="padding:0 34px;text-align:center;">
+        <img src="assets/home/rec-natalia.jpg" alt="Наталья Павлова" style="width:132px;height:132px;border-radius:50%;object-fit:cover;display:block;margin:0 auto;filter:grayscale(1) contrast(1.04);background:#eee;">
+        <h3 style="font-family:'Cormorant',serif;font-weight:600;font-size:23px;margin-top:18px;line-height:1.08;">Наталья Павлова</h3>
+        <div style="font-family:'Fira Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9a9a;margin-top:6px;">Associate Creative Director, BBDO</div>
+        <p style="font-size:13px;line-height:1.74;margin-top:18px;text-align:left;">За время работы в нашем отделе Саша заметно выросла в области креативного айдиэйшена и копирайтерского мастерства, в проработке идей. Она легко справляется с креативными задачами различной сложности индивидуально и в паре с арт-директором.</p>
+        <p style="font-size:13px;line-height:1.74;margin-top:12px;text-align:left;">Хочу отметить, что Саша амбициозна и постоянно занимается собственным развитием и дополнительным образованием. Среди лучших ее качеств — высокая вовлеченность и умение брать на себя ответственность.</p>
+      <img src="assets/deco/e04.png" alt="" aria-hidden="true" style="position: absolute; top: 135px; width: 58px; transform: rotate(12deg); pointer-events: none; z-index: 1; left: 899px"></div>
+    </div>
+  </section>
+
+  <!-- ===== AWARDS (black back page) ===== -->
+  <section data-screen-label="Awards" data-speaker-notes="Награды" style="margin: 56px -40px 0; background: #111; color: #fff; padding: 38px 40px 44px; position: relative">
+    <div style="text-align:center;">
+      <div style="font-family:'Fira Mono',monospace;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8a8a8a;">Хроника признания</div>
+      <h2 style="font-family:'Cormorant',serif;font-weight:400;font-size:clamp(34px,6vw,72px);text-transform:uppercase;letter-spacing:.04em;margin-top:2px;">Награды</h2>
+    </div>
+    <div class="m-awards" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:26px;border-top:1px solid #3a3a3a;">
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/award-dad.png" alt="D&amp;AD" style="height:58px;width:auto;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">D&amp;AD New Blood · Gold</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2026</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">The Face of L'Oréal Paris</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/award-yo-silver.jpg" alt="" style="height:60px;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Young Ones · Silver</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2026</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Integrated Campaign<br>Beauty Pit Stop</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/award-yo-bronze.jpg" alt="" style="height:60px;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Young Ones · Bronze</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2026</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Experiential &amp; Immersive<br>Beauty Pit Stop</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/award-yo-silver.jpg" alt="" style="height:60px;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Young Ones · Silver</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2026</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Experiential &amp; Immersive<br>Femini Academy</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><span style="font-family:'Cormorant',serif;font-style:italic;font-weight:500;font-size:30px;color:#9db8dc;">Merit</span></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Young Ones · Merit</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2026</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Integrated Campaign<br>Femini Academy</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><span style="font-family:'Cormorant',serif;font-style:italic;font-weight:500;font-size:30px;color:#9db8dc;">Merit</span></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Young Ones · Merit</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2026</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Creative Use of AI<br>Femini Academy</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/award-appliedarts.png" alt="Applied Arts" style="height:56px;width:auto;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Applied Arts · Winner</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2026</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Brand Activation Program · The Face of L'Oréal Paris</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/award-appliedarts.png" alt="Applied Arts" style="height:56px;width:auto;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Applied Arts · Winner</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2026</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Brand Activation Program · Beauty Pit Stop</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/award-appliedarts.png" alt="Applied Arts" style="height:56px;width:auto;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Applied Arts · Winner</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2026</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Social Responsibility Program · Femini Academy</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height: 60px; display: flex; align-items: center; position: relative"><img src="assets/home/award-sm-silver.png" alt="" style="height:60px;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Silver Mercury · Silver</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2026</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Nomination: Young<br>Быть вместе с МТС</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/award-sm-bronze.png" alt="" style="height:60px;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Silver Mercury · Bronze</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2026</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Nomination: Young<br>РИИЛ Красная Ветка</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/award-redapple.png" alt="" style="height:60px;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Red Apple · Silver</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2025</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Design · DODOBOX</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/logo-lime-t.png" alt="Lime" style="height:58px;width:auto;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Lime · Silver</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2025</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Future Idea · Tatoo 2.0</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/logo-lime-t.png" alt="Lime" style="height:58px;width:auto;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Lime · Bronze</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2025</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Future Idea · Душевная упаковка</p></div>
+      <div style="border-right:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a;padding:20px 18px;"><div style="height:60px;display:flex;align-items:center;"><img src="assets/home/logo-lime-t.png" alt="Lime" style="height:58px;width:auto;display:block;"></div><div style="font-family:'Cormorant',serif;font-weight:500;font-size:19px;margin-top:14px;line-height:1.05;">Lime · Silver</div><div style="font-family:'Fira Mono',monospace;font-size:10px;margin-top:5px;color:#8a8a8a;">2025</div><p style="font-family:'Fira Mono',monospace;font-size:10px;line-height:1.5;margin-top:10px;color:#bdbdbd;">Future Idea · Жуй, проверяй!</p></div>
+    </div>
+  </section><section data-screen-label="Special" data-speaker-notes="Спецматериал + контакты" style="padding:44px 0 0;position:relative;">
+    
+    <div style="max-width: 760px; margin: 0 auto; text-align: center; position: relative">
+      <div style="font-family: 'Fira Mono',monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #9a9a9a; position: relative">Продолжение в следующем номере</div>
+      <p style="font-family: 'Cormorant',serif; font-weight: 400; font-size: clamp(24px,3.4vw,40px); line-height: 1.16; margin-top: 12px; position: relative">Спецматериал о моем пути в креативе и хобби: <span style="font-style:italic;">как университет ломает мечты молодых креаторов</span></p>
+      <a href="pages/special.dc.html" style="position:relative;display:inline-block;margin-top:22px;text-decoration:none;">
+        <img src="assets/scribble/oval2.png" alt="" aria-hidden="true" style="position:absolute;inset:-12px -22px;width:calc(100% + 44px);height:calc(100% + 24px);pointer-events:none;opacity:.9;">
+        <span style="position:relative;font-family:'Cormorant',serif;font-weight:500;font-size:20px;text-transform:uppercase;letter-spacing:.08em;padding:6px 24px;display:inline-block;">Читать →</span>
+      </a>
+    </div>
+
+    <!-- contacts, below the button, airy -->
+    <!-- contacts as popup window -->
+    <div style="margin-top: 60px; padding: 48px 24px; border-top: 1px solid #111; border-bottom: 1px solid #111; display: flex; justify-content: center; background-color: #ffffffeb">
+      <div style="width:100%;max-width:480px;background:#fff;border:1px solid #111;box-shadow:0 20px 50px rgba(0,0,0,.26);">
+        <div style="display:flex;align-items:center;gap:8px;border-bottom:1px solid #111;padding:10px 14px;">
+          <span style="width:11px;height:11px;border-radius:50%;border:1px solid #111;display:inline-block;"></span>
+          <span style="width:11px;height:11px;border-radius:50%;border:1px solid #111;display:inline-block;"></span>
+          <span style="width:11px;height:11px;border-radius:50%;border:1px solid #111;display:inline-block;"></span>
+          <span style="flex:1;text-align:center;font-family:'Fira Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#9a9a9a;">axenova-news — contact</span>
+          <span style="font-family:'Fira Mono',monospace;font-size:13px;color:#111;line-height:1;">✕</span>
+        </div>
+        <div style="padding:38px 32px 40px;text-align:center;">
+          <h3 style="font-family:'Cormorant',serif;font-weight:300;font-size:clamp(24px,3.4vw,38px);line-height:1.06;">Давайте поработаем <span style="font-style:italic;font-weight:400;">вместе!</span></h3>
+          <p style="font-family:'Fira Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9a9a9a;margin-top:14px;">ОТКРЫТА К НОВЫМ ПРОЕКТАМ И ПРЕДЛОЖЕНИЯМ</p>
+          <div style="display:flex;gap:14px;justify-content:center;margin-top:26px;">
+            <a href="https://t.me/sashaGetc" target="_blank" rel="noopener" style="text-decoration:none;font-family:'Fira Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:#111;color:#fff;padding:11px 26px;">TG</a>
+            <a href="https://hh.ru/resume/5af1b387ff09c8aabd0039ed1f7a6767735959" target="_blank" rel="noopener" style="text-decoration:none;font-family:'Fira Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid #111;color:#111;padding:11px 26px;">hh.ru</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPECIAL + CONTACTS ===== -->
+  
+<button onClick="{{ toTop }}" aria-label="Наверх" style="position: fixed; width: 50px; height: 50px; border-radius: 50%; border: 1px solid #111; background: #fff; cursor: pointer; font-size: 19px; line-height: 1; display: flex; align-items: center; justify-content: center; z-index: 60; box-shadow: 0 4px 14px rgba(0,0,0,.16); left: 1110px; top: 6011px">↑</button></div><div style="background:#111;color:#fff;padding:16px 8px;text-align:center;font-family:'Cormorant',serif;font-weight:500;font-size:clamp(13px,2vw,18px);letter-spacing:.14em;text-transform:uppercase;overflow:hidden;white-space:nowrap;">
+  Обо&nbsp;мне&nbsp;&nbsp;✶&nbsp;&nbsp;Мои&nbsp;работы&nbsp;&nbsp;✶&nbsp;&nbsp;Награды&nbsp;&nbsp;✶&nbsp;&nbsp;Рекомендации&nbsp;&nbsp;✶&nbsp;&nbsp;Обо&nbsp;мне&nbsp;&nbsp;✶&nbsp;&nbsp;Мои&nbsp;работы&nbsp;&nbsp;✶
+</div>
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      toTop: () => window.scrollTo({ top: 0, behavior: 'smooth' })
+    };
+  }
+}
+</script>
+</body>
+</html>
