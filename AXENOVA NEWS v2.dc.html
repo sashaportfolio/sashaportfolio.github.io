@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=1160">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -21,12 +21,56 @@ a{color:inherit;}
 </style>
 <style id="__resp">
 @media (max-width: 760px){
-  /* Keep the DESKTOP newspaper layout on mobile — only fit it to the screen width */
-  [style*="max-width: 1140px"]{padding-left:14px !important;padding-right:14px !important;}
-  /* black awards band spans full width without overflowing narrow padding */
-  [style*="margin: 56px -40px 0"]{margin-left:-14px !important;margin-right:-14px !important;}
-  /* hide the vertical PORTFOLIO / EST side text on phones */
+  body{overflow-x:hidden;}
+  html{overflow-x:hidden;}
+  /* fit content to phone width */
+  [style*="max-width: 1140px"]{padding-left:16px !important;padding-right:16px !important;}
+  /* awards black band: full-bleed to the new 16px gutter */
+  [style*="margin: 56px -40px 0"]{margin-left:-16px !important;margin-right:-16px !important;padding-left:16px !important;padding-right:16px !important;}
+  /* hide vertical PORTFOLIO / EST side captions */
   [style*="writing-mode: vertical-rl"]{display:none !important;}
+  /* FIRST SCREEN / 3 COLUMNS / TG: keep the original arrangement, only enlarge text */
+  /* intro line "С моими работами…" — bigger */
+  [style*="clamp(19px, 2.3vw, 27px)"]{font-size:23px !important;line-height:1.34 !important;}
+  /* three-column body — stays 3 columns, text enlarged, gutters tightened to fit */
+  .m-about-cols > p{font-size:15px !important;line-height:1.5 !important;padding-left:9px !important;padding-right:9px !important;}
+  .m-about-cols .bigcap::first-letter{font-size:2.3em !important;padding:3px 7px 0 0 !important;}
+  /* first-screen & tg photos a touch larger — same side-by-side composition, just a wider photo column */
+  [style*="1.12fr 0.88fr"]{grid-template-columns:1fr 0.98fr !important;}
+  [style*="1.95fr 0.62fr"]{grid-template-columns:1.7fr 0.74fr !important;}
+  /* tg-channel text — bigger, kept beside its photo */
+  [style*="clamp(18px, 2vw, 24px)"]{font-size:20px !important;line-height:1.4 !important;}
+
+  /* EDUCATION: course columns go one under another; unified text size, narrower measure, even L/R */
+  .m-edu{grid-template-columns:1fr !important;border-top:0 !important;font-size:17.5px !important;}
+  .m-edu > div{border-right:0 !important;border-bottom:1px solid #e0e0e0 !important;padding:22px 0 !important;}
+  .m-edu > div:empty{display:none !important;}
+  /* force every body paragraph to the same size/leading (the <p> carry an inline 15px that must be overridden) */
+  .m-edu p{font-size:17.5px !important;line-height:1.5 !important;}
+  .m-edu > div > div{line-height:1.5;}
+  .m-edu p,.m-edu > div > div{max-width:34rem !important;}
+  /* course name (italic subtitle) a touch larger */
+  .m-edu div[style*="font-style: italic"]{font-size:16px !important;}
+
+  /* RECOMMENDATIONS: vertical, one under another, slightly larger text */
+  .m-recs{display:grid !important;grid-template-columns:1fr !important;gap:36px !important;margin-top:30px !important;}
+  .m-recs > div{border-right:0 !important;}
+  .m-recs p{font-size:16px !important;line-height:1.6 !important;}
+
+  /* WORKS: vertical, two per row */
+  .m-works{display:grid !important;grid-template-columns:1fr 1fr !important;gap:18px 14px !important;}
+
+  /* PRESS: vertical, two per row */
+  .m-press{display:grid !important;grid-template-columns:1fr 1fr !important;gap:0 !important;margin-top:28px !important;}
+  .m-press > div{padding-top:18px !important;padding-bottom:18px !important;}
+
+  /* RECOMMENDATIONS: (styled above) */
+
+  /* AWARDS: vertical, three per row */
+  .m-awards{display:grid !important;grid-template-columns:repeat(3,1fr) !important;margin-top:26px !important;}
+
+  /* back-to-top button */
+  [aria-label="Наверх"]{left:auto !important;right:16px !important;top:auto !important;bottom:16px !important;}
 }
 </style>
 <style id="__anim">
@@ -46,7 +90,7 @@ a{color:inherit;}
     setTimeout(function(){window.location.href=href;},300);
   },true);
   // Back/forward (incl. mobile bfcache restore): clear the exit animation so the restored page shows normally
-  window.addEventListener('pageshow',function(){document.body.classList.remove('page-exit');});
+  window.addEventListener('pageshow',function(){document.body.classList.remove('page-exit');try{sessionStorage.removeItem('axenova_work_unlocked');}catch(e){}});
 })();
 </script>
 </helmet>
@@ -118,7 +162,7 @@ a{color:inherit;}
     </div>
 
     <!-- 3-column body -->
-    <div style="border-top:1px solid #111;margin-top:28px;padding-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
+    <div class="m-about-cols" style="border-top:1px solid #111;margin-top:28px;padding-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
       
       <p class="bigcap" style="font-family:'Fira Mono',monospace;font-size:13px;line-height:1.7;padding-right:24px;border-right:1px solid #e0e0e0;">Я&nbsp;работаю в&nbsp;креативе уже около трех лет, за&nbsp;это время я&nbsp;прошла путь от&nbsp;стажера в&nbsp;RTA до&nbsp;мидл-копирайтера в&nbsp;BBDO.</p><p style="font-family:'Fira Mono',monospace;font-size:13px;line-height:1.7;padding:0 24px;border-right:1px solid #e0e0e0;">Мне удалось поработать с&nbsp;крупными брендами: MARS (Snickers, Twix, Orbit, M&amp;M's, Коркунов, Sheba, Whiskas, Cesar, Perfect&nbsp;Fit, Pedigree), Т-Банк, СБЕР, Газпромбанк, Открытие, Финам, Магнит, Пятерочка, АТОЛ, IQOS, Здравсити.</p><p style="font-family:'Fira Mono',monospace;font-size:13px;line-height:1.7;padding-left:24px;">Я&nbsp;придумываю идеи для рекламных кампаний, создаю концепции и&nbsp;спецпроекты и&nbsp;реализую их в&nbsp;самых разных форматах: от&nbsp;лайна до&nbsp;лендинга.</p>
       
@@ -127,13 +171,13 @@ a{color:inherit;}
     <!-- pull quote band -->
     <div style="border-top:1px solid #111;border-bottom:1px solid #111;margin-top:30px;padding:34px 0;text-align:center;position:relative;">
       <span style="font-family:'Cormorant',serif;font-size:130px;line-height:0;color:#111;position:absolute;left:50%;transform:translateX(-50%);top:48px;opacity:.12;">“</span>
-      <p style="font-family:'Cormorant',serif;font-style:italic;font-weight:400;font-size:clamp(24px,4.4vw,50px);line-height:1.18;max-width:920px;margin:0 auto;position:relative;">Мне нравится, что мои слова, собранные из&nbsp;обычных&nbsp;букв, могут влиять на людей и доносить&nbsp;смыслы</p>
+      <p style="font-family:'Cormorant',serif;font-style:italic;font-weight:400;font-size:clamp(24px,4.4vw,50px);line-height:1.18;max-width:920px;margin:0 auto;position:relative;">Мне нравится, что мои слова, собранные из&nbsp;обычных&nbsp;букв, могут влиять на&nbsp;людей и&nbsp;доносить&nbsp;смыслы</p>
       <div style="font-family:'Fira Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#9a9a9a;margin-top:18px;">о том, что нравится в работе копирайтером</div>
     </div>
 
     <!-- tg footnote -->
     <div style="display:grid;grid-template-columns:1.95fr 0.62fr;gap:20px;align-items:center;margin-top:14px;">
-      <p style="font-family:'Cormorant',serif;font-size:clamp(21px,2.5vw,29px);font-style:italic;line-height:1.4;text-align:left;max-width:520px;">А&nbsp;еще я&nbsp;веду тг-канал, <a href="https://t.me/creativecabanchik" target="_blank" rel="noopener" style="border-bottom:1px solid #111;text-decoration:none;">@creativecabanchik</a>, где рассказываю о&nbsp;рекламе, показываю классные кейсы и&nbsp;нашептываю неожиданные инсайты.</p>
+      <p style="font-family:'Cormorant',serif;font-size:clamp(18px,2vw,24px);font-style:italic;line-height:1.38;text-align:left;max-width:485px;">А&nbsp;еще я&nbsp;веду тг-канал, <a href="https://t.me/creativecabanchik" target="_blank" rel="noopener" style="border-bottom:1px solid #111;text-decoration:none;">@creativecabanchik</a>, где рассказываю о&nbsp;рекламе, показываю классные кейсы и&nbsp;нашептываю неожиданные инсайты.</p>
       <figure style="margin:0;position:relative;"><img src="assets/deco/e06.png" alt="" aria-hidden="true" style="position: absolute; left: -39px; top: -27px; width: 79px; transform: rotate(-4deg); pointer-events: none; z-index: 2; height: 83px"><img src="assets/home/education-bw.jpg" alt="Аксенова Александра" style="width:100%;display:block;background:#eee;transform:rotate(3deg);box-shadow:0 12px 30px rgba(0,0,0,.16);"></figure>
     </div>
 
@@ -148,37 +192,37 @@ a{color:inherit;}
       <img src="assets/scribble/star.png" alt="" aria-hidden="true" style="width:30px;flex:none;">
       <h2 style="font-family:'Cormorant',serif;font-weight:400;font-size:clamp(26px,4.2vw,48px);text-transform:uppercase;letter-spacing:.04em;">Образование</h2>
       <div style="flex:1;border-top:1px solid #111;"></div>
-    </div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:26px;font-size:15px;">
+    </div><div class="m-edu" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:26px;font-size:15px;">
       <div style="padding: 6px 16px 26px 0; border-right: 1px solid #e0e0e0; position: relative">
         <div style="font-family:'Cormorant',serif;font-weight:400;font-size:42px;line-height:1;">2024</div>
         <div style="font-family:'Fira Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;">Финансовый университет при Правительстве РФ</div>
-        <div style="font-style:italic;font-size:15.5px;margin-top:6px;color:#444;">«Реклама и связи с общественностью»</div>
-        <p style="font-size: 17px; line-height: 1.6; margin-top: 12px">В вузе я состояла в студенческих организациях, выступала на конференциях, писала статьи&nbsp;</p><div>и создавала контент для соц.сетей.&nbsp;</div><p></p><div><br></div><div>А еще досконально изучила социологию, PR, историю медиа и маркетинг (и даже теорию пропаганды и агитации).</div><p></p>
+        <div style="font-style:italic;font-size:14px;margin-top:6px;color:#444;">«Реклама и связи с общественностью»</div>
+        <p style="font-size: 15px; line-height: 1.55; margin-top: 12px">В вузе я&nbsp;состояла в&nbsp;студенческих организациях, выступала на&nbsp;конференциях, писала статьи и&nbsp;создавала контент для&nbsp;соц.сетей.</p><div><br></div><div>А&nbsp;еще досконально изучила социологию, PR, историю медиа и&nbsp;маркетинг (и&nbsp;даже теорию пропаганды и&nbsp;агитации).</div><p></p>
       </div>
       <div style="padding: 6px 16px 26px; border-right: 1px solid #e0e0e0; position: relative">
         <div style="font-family:'Cormorant',serif;font-weight:400;font-size:42px;line-height:1;">2024</div>
         <div style="font-family:'Fira Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;">VK Education</div>
-        <div style="font-style:italic;font-size:15.5px;margin-top:6px;color:#444;">«Маркетинг, коммуникации и креатив в IT»</div>
-        <p style="font-size: 17px; line-height: 1.6; margin-top: 12px">Прокачала свои знания в маркетинге, реализовала проект в команде для сервиса VK, занималась контент-стратегией и написанием текстов.&nbsp;</p><div><br></div><div>Была лидером команды и защищала концепцию перед руководителями Яндекса&nbsp;<div>и VK.</div></div><p></p>
+        <div style="font-style:italic;font-size:14px;margin-top:6px;color:#444;">«Маркетинг, коммуникации и креатив в IT»</div>
+        <p style="font-size: 15px; line-height: 1.55; margin-top: 12px">Прокачала свои знания в&nbsp;маркетинге, реализовала проект в&nbsp;команде для&nbsp;сервиса VK, занималась контент-стратегией и&nbsp;написанием текстов.&nbsp;</p><div><br></div><div>Была лидером команды и&nbsp;защищала концепцию перед руководителями Яндекса и&nbsp;VK.</div><p></p>
       </div>
       <div style="padding:6px 0 26px 16px;">
         <div style="font-family: 'Cormorant',serif; font-weight: 400; font-size: 42px; line-height: 1; position: relative">2025</div>
         <div style="font-family:'Fira Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;">Wordshop</div>
-        <div style="font-style:italic;font-size:15.5px;margin-top:6px;color:#444;">«Креатив: копирайтинг и арт-дирекшен»</div>
-        <p style="font-size: 17px; line-height: 1.6; margin-top: 12px">В Wordshop я усилила свои скиллы в креативе&nbsp;</p><div>на годовом курсе, где углубилась в монтаж, написание сценариев, арт-дирекшен, нейминг&nbsp;<div>и копирайтинг. Мои работы были признаны лучшими на курсе кураторами и приглашенными экспертами.&nbsp;</div></div><p></p><div><br></div><div>Во время обучения я поучаствовала в креативных фестивалях и конкурсах, где наша команда получила признание. А еще написала свой первый сценарий для сериала.</div><p></p>
+        <div style="font-style:italic;font-size:14px;margin-top:6px;color:#444;">«Креатив: копирайтинг и арт-дирекшен»</div>
+        <p style="font-size: 15px; line-height: 1.55; margin-top: 12px">В Wordshop я&nbsp;усилила свои скиллы в&nbsp;креативе на&nbsp;годовом курсе, где углубилась в&nbsp;монтаж, написание сценариев, арт-дирекшен, нейминг и&nbsp;копирайтинг. Мои работы были признаны лучшими на&nbsp;курсе кураторами и&nbsp;приглашенными экспертами.</p><div><br></div><div>Во время обучения я&nbsp;поучаствовала в&nbsp;креативных фестивалях и&nbsp;конкурсах, где наша команда получила признание. А&nbsp;еще написала свой первый сценарий для&nbsp;сериала.</div><p></p>
       </div>
-    </div><div style="border-top:1px solid #e0e0e0;display:grid;grid-template-columns:repeat(3,1fr);font-size:15px;">
+    </div><div class="m-edu" style="border-top:1px solid #e0e0e0;display:grid;grid-template-columns:repeat(3,1fr);font-size:15px;">
       
       <div style="padding:24px 16px 6px 0;border-right:1px solid #e0e0e0;">
         <div style="font-family:'Cormorant',serif;font-weight:400;font-size:42px;line-height:1;">2026</div>
         <div style="font-family:'Fira Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;">mads</div>
-        <div style="font-style:italic;font-size:15.5px;margin-top:6px;color:#444;">«Концептуальное мышление: как выигрывать фестивали»</div>
-        <p style="font-size: 17px; line-height: 1.6; margin-top: 12px">В mads я от и до изучила тонкости создания крутого фестивального креатива. Мои работы получили признание на российских и международных фестивалях рекламы и дизайна Young Ones , D&amp;AD и д.р.</p>
+        <div style="font-style:italic;font-size:14px;margin-top:6px;color:#444;">«Концептуальное мышление: как выигрывать фестивали»</div>
+        <p style="font-size: 15px; line-height: 1.55; margin-top: 12px">В mads я&nbsp;от&nbsp;и&nbsp;до изучила тонкости создания крутого фестивального креатива. Мои работы получили признание на&nbsp;российских и&nbsp;международных фестивалях рекламы и&nbsp;дизайна Young Ones, D&amp;AD и&nbsp;д.р.</p>
       </div><div style="padding: 24px 16px 6px; border-right: 1px solid #e0e0e0; position: relative">
         <div style="font-family: 'Cormorant',serif; font-weight: 400; font-size: 42px; line-height: 1; position: relative">2026</div>
         <div style="font-family:'Fira Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;">AI&amp;SENSE</div>
-        <div style="font-style:italic;font-size:15.5px;margin-top:6px;color:#444;">«Визуальное мышление и AI-концептинг»</div>
-        <p style="font-size: 17px; line-height: 1.6; margin-top: 12px">В AI&amp;SENSE я усилила навыки визуального мышления и работы с искусственным интеллектом и научилась использовать ИИ для рабочих задач в креативе.&nbsp;</p><div><br></div><div>Мы с командой прошли путь от идеи до полноценного концепта рекламной кампании и презентовали его экспертам в области ИИ.</div><p></p>
+        <div style="font-style:italic;font-size:14px;margin-top:6px;color:#444;">«Визуальное мышление и AI-концептинг»</div>
+        <p style="font-size: 15px; line-height: 1.55; margin-top: 12px">В AI&amp;SENSE я&nbsp;усилила навыки визуального мышления и&nbsp;работы с&nbsp;искусственным интеллектом и&nbsp;научилась использовать ИИ для&nbsp;рабочих задач в&nbsp;креативе.&nbsp;</p><div><br></div><div>Мы с&nbsp;командой прошли путь от&nbsp;идеи до&nbsp;полноценного концепта рекламной кампании и&nbsp;презентовали его экспертам в&nbsp;области ИИ.</div><p></p>
       </div>
       <div style="padding:24px 0 6px 16px;"></div>
     </div>
@@ -192,7 +236,7 @@ a{color:inherit;}
       <h2 style="font-family:'Cormorant',serif;font-weight:400;font-size:clamp(24px,3.6vw,44px);text-transform:uppercase;letter-spacing:.03em;margin-top:2px;">Мои последние работы</h2>
     </div>
     <div style="padding: 32px 0 0; position: relative">
-      <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; position: relative">
+      <div class="m-works" style="display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; position: relative">
         <a href="pages/beauty-pit-stop.dc.html" style="text-decoration:none;display:block;"><img src="assets/home/work-beauty-pit-stop.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);background:#eee;"><h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.04;margin-top:12px;">Beauty Pit Stop</h3></a>
         <a href="pages/femini-academy.dc.html" style="text-decoration: none; display: block; position: relative"><img src="assets/home/work-femini-academy.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);background:#eee;"><h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.04;margin-top:12px;">Femini Academy</h3></a>
         <a href="pages/face-of-loreal.dc.html" style="text-decoration:none;display:block;"><img src="assets/home/work-face-of-loreal.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);background:#eee;"><h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.04;margin-top:12px;">The Face of L'Oréal&nbsp;Paris</h3></a>
@@ -257,23 +301,23 @@ a{color:inherit;}
       <div style="padding: 0 34px; border-right: 1px solid #e0e0e0; text-align: center; position: relative">
         <img src="assets/home/rec-anastasia.jpg" alt="Анастасия Пофтальная" style="width:132px;height:132px;border-radius:50%;object-fit:cover;display:block;margin:0 auto;filter:grayscale(1) contrast(1.04);background:#eee;">
         <h3 style="font-family:'Cormorant',serif;font-weight:600;font-size:23px;margin-top:18px;line-height:1.08;">Анастасия Пофтальная</h3>
-        <div style="font-family:'Fira Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9a9a;margin-top:6px;">Production Lead in Creative Marketing Team</div>
-        <p style="font-size:15px;line-height:1.72;margin-top:18px;text-align:left;">Я была руководителем Саши в digital-агентстве RTA около 2 лет. Чтобы получить должность креативного стажера, она прошла отбор более чем из 60 претендентов. Ее тестовое задание сразу привлекло мое внимание.</p>
-        <p style="font-size:15px;line-height:1.72;margin-top:12px;text-align:left;">Саша быстро учится и задает правильные вопросы. Она погружается в задачу, и это вовлечение чувствуется на всех этапах работы над проектом. С ней легко работать, обратная связь мотивирует ее, а не наоборот, что особенно важно в креативной сфере.</p>
+        <div style="font-family:'Fira Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9a9a;margin-top:6px;">Production Lead in Creative Marketing Team</div>
+        <p style="font-size:13px;line-height:1.74;margin-top:18px;text-align:left;">Я была руководителем Саши в digital-агентстве RTA около 2 лет. Чтобы получить должность креативного стажера, она прошла отбор более чем из 60 претендентов. Ее тестовое задание сразу привлекло мое внимание.</p>
+        <p style="font-size:13px;line-height:1.74;margin-top:12px;text-align:left;">Саша быстро учится и задает правильные вопросы. Она погружается в задачу, и это вовлечение чувствуется на всех этапах работы над проектом. С ней легко работать, обратная связь мотивирует ее, а не наоборот, что особенно важно в креативной сфере.</p>
       <img src="assets/deco/e03.png" alt="" aria-hidden="true" style="display:none;"></div>
       <div style="padding: 0 34px; border-right: 1px solid #e0e0e0; text-align: center; position: relative">
         <img src="assets/home/rec-alexey.jpg" alt="Алексей Федоров" style="width:132px;height:132px;border-radius:50%;object-fit:cover;display:block;margin:0 auto;filter:grayscale(1) contrast(1.04);background:#eee;">
         <h3 style="font-family:'Cormorant',serif;font-weight:600;font-size:23px;margin-top:18px;line-height:1.08;">Алексей Федоров</h3>
-        <div style="font-family:'Fira Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9a9a;margin-top:6px;">Executive Creative Director, BBDO</div>
-        <p style="font-size:15px;line-height:1.72;margin-top:18px;text-align:left;">Саша действительно производит впечатление своим серьезным отношением к работе, она очень инициативна, никогда не отсиживается в стороне, открыта к новому. Мне кажется, Саша — командный игрок, но при этом она хорошо справляется и в одиночку.</p><p></p>
-        <p style="font-size:15px;line-height:1.72;margin-top:12px;text-align:left;">Саша выделяется творческим подходом и свежими идеями. Она максималист: если надо принести 5 идей, она принесет 10. Внимание к деталям, перфекционизм — то, что ее отличает.</p>
+        <div style="font-family:'Fira Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9a9a;margin-top:6px;">Executive Creative Director, BBDO</div>
+        <p style="font-size:13px;line-height:1.74;margin-top:18px;text-align:left;">Саша действительно производит впечатление своим серьезным отношением к работе, она очень инициативна, никогда не отсиживается в стороне, открыта к новому. Мне кажется, Саша — командный игрок, но при этом она хорошо справляется и в одиночку.</p><p></p>
+        <p style="font-size:13px;line-height:1.74;margin-top:12px;text-align:left;">Саша выделяется творческим подходом и свежими идеями. Она максималист: если надо принести 5 идей, она принесет 10. Внимание к деталям, перфекционизм — то, что ее отличает.</p>
       <img src="assets/deco/e17.png" alt="" aria-hidden="true" style="display:none;"></div>
       <div style="padding:0 34px;text-align:center;position:relative;">
         <img src="assets/home/rec-natalia.jpg" alt="Наталья Павлова" style="width:132px;height:132px;border-radius:50%;object-fit:cover;display:block;margin:0 auto;filter:grayscale(1) contrast(1.04);background:#eee;">
         <h3 style="font-family:'Cormorant',serif;font-weight:600;font-size:23px;margin-top:18px;line-height:1.08;">Наталья Павлова</h3>
-        <div style="font-family:'Fira Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9a9a;margin-top:6px;">Associate Creative Director, BBDO</div>
-        <p style="font-size:15px;line-height:1.72;margin-top:18px;text-align:left;">За время работы в нашем отделе Саша заметно выросла в области креативного айдиэйшена и копирайтерского мастерства, в проработке идей. Она легко справляется с креативными задачами различной сложности индивидуально и в паре с арт-директором.</p>
-        <p style="font-size:15px;line-height:1.72;margin-top:12px;text-align:left;">Хочу отметить, что Саша амбициозна и постоянно занимается собственным развитием и дополнительным образованием. Среди лучших ее качеств — высокая вовлеченность и умение брать на себя ответственность.</p>
+        <div style="font-family:'Fira Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9a9a;margin-top:6px;">Associate Creative Director, BBDO</div>
+        <p style="font-size:13px;line-height:1.74;margin-top:18px;text-align:left;">За время работы в нашем отделе Саша заметно выросла в области креативного айдиэйшена и копирайтерского мастерства, в проработке идей. Она легко справляется с креативными задачами различной сложности индивидуально и в паре с арт-директором.</p>
+        <p style="font-size:13px;line-height:1.74;margin-top:12px;text-align:left;">Хочу отметить, что Саша амбициозна и постоянно занимается собственным развитием и дополнительным образованием. Среди лучших ее качеств — высокая вовлеченность и умение брать на себя ответственность.</p>
       <img src="assets/deco/e04.png" alt="" aria-hidden="true" style="display:none;"></div>
     </div>
   </section>

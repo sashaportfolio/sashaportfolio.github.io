@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=1160">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../support.js"></script>
 </head>
 <body>
@@ -20,24 +20,13 @@ a{color:inherit;}
 </style>
 <style id="__resp">
 @media (max-width: 760px){
-  [style*="max-width: 1140px"]{padding-left:18px !important;padding-right:18px !important;}
-  [style*="grid-template-columns: repeat(3"]{grid-template-columns:1fr !important;}
-  [style*="grid-template-columns: repeat(4"]{grid-template-columns:1fr 1fr !important;}
-  [style*="grid-template-columns: repeat(2"]{grid-template-columns:1fr !important;}
-  [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr !important;}
-  [style*="1.32fr"],[style*="1.5fr"],[style*="1.4fr"],[style*="1.6fr"]{grid-template-columns:1fr !important;}
-  [style*="columns: 2"]{columns:1 !important;}
-  [style*="646px"]{width:100% !important;height:auto !important;}
-  [style*="border-right-color: rgb(224, 224, 224)"]{border-right-width:0 !important;padding-right:0 !important;margin-bottom:16px;}
-  [style*="border-right-color: rgb(214, 214, 214)"]{border-right-width:0 !important;}
-  [style*="justify-content: space-between"]{flex-wrap:wrap !important;gap:8px;}
-  img[aria-hidden="true"][style*="position: absolute"]{display:none !important;}
-  [style*="rotate(-1.6deg)"]{width:100% !important;transform:rotate(-1.6deg) !important;}
-  a[href*="vimeo"] span[style*="border-radius: 50%"],a[href*="oneclub"] span[style*="border-radius: 50%"],a[href*="dandad"] span[style*="border-radius: 50%"],a[href*="rutube"] span[style*="border-radius: 50%"],a[href*="figma"] span[style*="border-radius: 50%"],a[href*="dreamies"] span[style*="border-radius: 50%"]{width:46px !important;height:46px !important;}
-  img[src*="about-portrait"], img[src*="education-portrait"]{max-width:70% !important;}
-  img[src*="rec-"]{border-radius:0 !important;width:118px !important;height:118px !important;margin:0 !important;}
-  [style*="margin: 56px -40px 0"]{margin-left:-18px !important;margin-right:-18px !important;}
-  [style*="clamp(38px, 6.4vw, 84px)"]{font-size:30px !important;}
+  body{overflow-x:hidden;}
+  [style*="max-width: 1140px"]{padding-left:16px !important;padding-right:16px !important;}
+  /* case covers: vertical, two per row */
+  .m-cases{display:grid !important;grid-template-columns:1fr 1fr !important;gap:18px 14px !important;}
+  .m-cases h3{font-size:17px !important;}
+  /* keep the decorative "← Назад" oval from hanging off the right edge */
+  [style*="justify-content: flex-end"]{justify-content:center !important;}
 }
 </style>
 <style id="__anim">
@@ -82,7 +71,7 @@ a{color:inherit;}
     <div style="border-top:1px solid #111;margin-top:26px;"></div>
   </header>
   <section style="padding:34px 0 0;">
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;">
+    <div class="m-cases" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;">
         <a href="chew-check-up.dc.html" style="text-decoration:none;display:block;">
           <img src="../assets/festival/chew-check-up.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:#eee;filter:grayscale(1) contrast(1.05);" />
           <h3 style="font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.04;margin-top:12px;">Chew Check Up</h3>
