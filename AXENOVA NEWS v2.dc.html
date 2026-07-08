@@ -31,11 +31,11 @@ a{color:inherit;}
   [style*="writing-mode: vertical-rl"]{display:none !important;}
   /* FIRST SCREEN / 3 COLUMNS / TG: keep the original arrangement; smaller text, larger photos */
   /* headline "Это не просто портфолио…" — down to the tg-text size */
-  [style*="clamp(38px, 6.4vw, 84px)"]{font-size:21px !important;line-height:1.15 !important;}
+  [style*="clamp(38px, 6.4vw, 84px)"]{font-size:23px !important;line-height:1.12 !important;}
   /* intro line "С моими работами…" — smaller */
-  [style*="clamp(19px, 2.3vw, 27px)"]{font-size:18px !important;line-height:1.34 !important;}
-  /* three-column body — stays 3 columns, wider columns (less inner padding) */
-  .m-about-cols > p{font-size:15px !important;line-height:1.5 !important;padding-left:4px !important;padding-right:4px !important;}
+  [style*="clamp(19px, 2.3vw, 27px)"]{font-size:17px !important;line-height:1.36 !important;}
+  /* three-column body — stays 3 columns, one step smaller & wider (less inner padding) */
+  .m-about-cols > p{font-size:12.5px !important;line-height:1.5 !important;padding-left:2px !important;padding-right:2px !important;}
   .m-about-cols .bigcap::first-letter{font-size:2.3em !important;padding:3px 7px 0 0 !important;}
   /* first-screen & tg photos larger — same side-by-side composition, wider photo column */
   [style*="1.12fr 0.88fr"]{grid-template-columns:0.78fr 1.05fr !important;gap:20px !important;}
@@ -394,7 +394,24 @@ a{color:inherit;}
 class Component extends DCLogic {
   renderVals() {
     return {
-      toTop: () => window.scrollTo({ top: 0, behavior: 'smooth' })
+      toTop: () => {
+        // The scrolling element differs across environments (window / documentElement /
+        // body / a scroll container). Walk up from the button to whatever actually scrolls,
+        // and also hit the usual document targets — so the button works on mobile too.
+        try {
+          let el = document.querySelector('[aria-label="Наверх"]');
+          const scrollers = new Set([window, document.scrollingElement, document.documentElement, document.body]);
+          let node = el ? el.parentElement : null;
+          while (node) {
+            const oy = getComputedStyle(node).overflowY;
+            if ((oy === 'auto' || oy === 'scroll') && node.scrollHeight > node.clientHeight) scrollers.add(node);
+            node = node.parentElement;
+          }
+          scrollers.forEach(s => { if (s) { try { s.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { try { s.scrollTop = 0; } catch (e2) {} } } });
+        } catch (e) {
+          window.scrollTo(0, 0);
+        }
+      }
     };
   }
 }
