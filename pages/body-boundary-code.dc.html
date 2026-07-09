@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=1160">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../support.js"></script>
 </head>
 <body>
@@ -16,6 +16,8 @@
 html{scroll-behavior:smooth;}
 body{background:#ffffff;}
 a{color:inherit;}
+/* award logos: fixed-width column so all award texts left-align */
+[data-screen-label="Awards"] > div > img{width:60px !important;height:auto !important;max-height:60px !important;object-fit:contain !important;object-position:left center !important;flex:0 0 60px !important;margin-top:0 !important;}
 .bigcap::first-letter{font-family:'Cormorant',serif;font-weight:600;font-size:5.4em;line-height:.64;float:left;padding:6px 12px 0 0;color:#111;}
 </style>
 <style id="__resp">
@@ -60,8 +62,21 @@ a{color:inherit;}
   window.addEventListener('pageshow',function(){document.body.classList.remove('page-exit');});
 })();
 </script>
+<style id="__mob2">
+@media (max-width: 760px){
+  [style*="font-size: 15px"]{font-size:17.5px !important;line-height:1.72 !important;}
+  [style*="font-size: 14px"]{font-size:16px !important;}
+  [style*="font-size: 13px"]{font-size:14.5px !important;}
+  [style*="font-size: 16px"]{font-size:18px !important;line-height:1.68 !important;}
+  [style*="font-size: 20px"]{font-size:22px !important;}
+  [style*="font-size: 21px"]{font-size:23px !important;}
+  [style*="letter-spacing: 0.2em"][style*="font-size: 11px"]{font-size:12px !important;}
+  @keyframes secReveal{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:none;}}
+  section{animation:secReveal linear both;animation-timeline:view();animation-range:entry 4% entry 42%;}
+}
+</style>
 </helmet>
-<div style="background:#ffffff;color:#111111;font-family:'EB Garamond',Georgia,serif;min-height:100vh;"><div style="max-width:1140px;margin:0 auto;padding:30px 40px 0;">
+<div style="background:#ffffff;color:#111111;font-family:'EB Garamond',Georgia,serif;"><div style="max-width:1140px;margin:0 auto;padding:30px 40px 0;">
   <div data-screen-label="Case nav">
     <nav style="display:flex;justify-content:space-between;align-items:center;font-family:'Fira Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#111;">
       <a href="../AXENOVA%20NEWS%20v2.dc.html" style="text-decoration:none;position:relative;">Главная страница<img src="../assets/scribble/underline.png" alt="" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-11px;width:100%;height:10px;object-fit:fill;opacity:.85;" /></a>
@@ -90,7 +105,7 @@ a{color:inherit;}
   <section style="padding:44px 0 50px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px;">
     <div>
       <div style="font-family:'Fira Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid #111;padding-bottom:8px;margin-bottom:14px;">Background</div>
-      <p class="bigcap" style="font-size:15px;line-height:1.66;">Люди с синдромом Дауна сталкиваются с самыми высокими показателями сексуальных домогательств. Это связано с множеством факторов, в частности, в момент нежелательного контакта они могут разволноваться и не сориентироваться, как нужно отреагировать на нежелательные прикосновения, это подвергает риску их безопасность. Кроме того, обучение защите своих личных границ недостаточно гибкое: преобладает вербальный подход, в то время как люди с СД лучше воспринимают информацию визуально.</p>
+      <p class="bigcap" style="font-size:15px;line-height:1.66;">Люди с синдромом Дауна сталкиваются с самыми высокими показателями сексуальных домогательств. Это связано с множеством факторов, в частности, в момент нежелательного контакта они могут разволноваться и не сориентироваться, как нужно отреагировать на нежелательные прикосновения, это подвергает риску их безопасность.</p><p style="font-size:15px;line-height:1.66;margin-top:13px;">Кроме того, обучение защите своих личных границ недостаточно гибкое: преобладает вербальный подход, в то время как люди с СД лучше воспринимают информацию визуально.</p>
       <p style="font-size:15px;line-height:1.66;margin-top:13px;">Мы проанализировали различные исследования и пришли к решению создать проект Body boundary code.</p>
     </div>
     <div>
@@ -101,8 +116,8 @@ a{color:inherit;}
     </div>
     <div>
       <div style="font-family:'Fira Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid #111;padding-bottom:8px;margin-bottom:14px;">Execution</div>
-      <p style="font-size:15px;line-height:1.66;">В коллаборации с Megan Hawk мы создали коллекцию переводных татуировок-раскрасок с изображением персонажей, которые выражают позитивные и негативные эмоции. В ходе обучения личным границам человек с синдромом Дауна вместе с коучем должен определить, в каких местах тела прикосновения допустимы для него, а в каких нет, и наклеит татуировки в зависимости от этого.</p>
-      <p style="font-size:15px;line-height:1.66;margin-top:13px;">Человек с синдромом Дауна сможет раскрасить татуировки в тот цвет, в который он хочет: это позволит привыкнуть к этой механике и визуально запомнить, где другим можно прикасаться, а где нет. И благодаря этому триггеру в волнительный момент ему будет проще сориентироваться и решиться отреагировать на прикосновение должным образом, что позволит минимизировать риск насилия.</p>
+      <p style="font-size:15px;line-height:1.66;">В коллаборации с Megan Hawk мы создали коллекцию переводных татуировок-раскрасок с изображением персонажей, которые выражают позитивные и негативные эмоции.</p><p style="font-size:15px;line-height:1.66;margin-top:13px;">В ходе обучения личным границам человек с синдромом Дауна вместе с коучем должен определить, в каких местах тела прикосновения допустимы для него, а в каких нет, и наклеит татуировки в зависимости от этого.</p>
+      <p style="font-size:15px;line-height:1.66;margin-top:13px;">Человек с синдромом Дауна сможет раскрасить татуировки в тот цвет, в который он хочет: это позволит привыкнуть к этой механике и визуально запомнить, где другим можно прикасаться, а где нет.</p><p style="font-size:15px;line-height:1.66;margin-top:13px;">И благодаря этому триггеру в волнительный момент ему будет проще сориентироваться и решиться отреагировать на прикосновение должным образом, что позволит минимизировать риск насилия.</p>
     </div>
   </section>
 </div>

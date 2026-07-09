@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=1160">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../support.js"></script>
 </head>
 <body>
@@ -16,6 +16,8 @@
 html{scroll-behavior:smooth;}
 body{background:#ffffff;}
 a{color:inherit;}
+/* award logos: fixed-width column so all award texts left-align */
+[data-screen-label="Awards"] > div > img{width:60px !important;height:auto !important;max-height:60px !important;object-fit:contain !important;object-position:left center !important;flex:0 0 60px !important;margin-top:0 !important;}
 .bigcap::first-letter{font-family:'Cormorant',serif;font-weight:600;font-size:5.4em;line-height:.64;float:left;padding:6px 12px 0 0;color:#111;}
 </style>
 <style id="__resp">
@@ -60,6 +62,19 @@ a{color:inherit;}
   window.addEventListener('pageshow',function(){document.body.classList.remove('page-exit');});
 })();
 </script>
+<style id="__mob2">
+@media (max-width: 760px){
+  [style*="font-size: 15px"]{font-size:17.5px !important;line-height:1.72 !important;}
+  [style*="font-size: 14px"]{font-size:16px !important;}
+  [style*="font-size: 13px"]{font-size:14.5px !important;}
+  [style*="font-size: 16px"]{font-size:18px !important;line-height:1.68 !important;}
+  [style*="font-size: 20px"]{font-size:22px !important;}
+  [style*="font-size: 21px"]{font-size:23px !important;}
+  [style*="letter-spacing: 0.2em"][style*="font-size: 11px"]{font-size:12px !important;}
+  @keyframes secReveal{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:none;}}
+  section{animation:secReveal linear both;animation-timeline:view();animation-range:entry 4% entry 42%;}
+}
+</style>
 </helmet>
 <div style="background:#ffffff;color:#111111;font-family:'EB Garamond',Georgia,serif;"><div style="max-width:1140px;margin:0 auto;padding:30px 40px 0;">
   <div data-screen-label="Case nav">
@@ -99,7 +114,7 @@ a{color:inherit;}
     </div>
     <div>
       <div style="font-family:'Fira Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid #111;padding-bottom:8px;margin-bottom:14px;">Execution</div>
-      <p style="font-size:15px;line-height:1.66;">На лендинге мы разместили каталог с мяу-моментами, которые пользователь открывает раз в несколько дней, чтобы получить идею для яркого момента с котенком (совместная активность, игра или совет). После того как пользователь открыл первый мяу-момент, ему открывается каталог с новыми идеями. Пользователь может лайкать понравившиеся моменты, сохраняя их в свою коллекцию. Также мы запустили конкурс фотографий, чтобы пользователи делились своими личными мяу-моментами.</p>
+      <p style="font-size:15px;line-height:1.66;">На лендинге мы разместили каталог с мяу-моментами, которые пользователь открывает раз в несколько дней, чтобы получить идею для яркого момента с котенком (совместная активность, игра или совет).</p><p style="font-size:15px;line-height:1.66;margin-top:13px;">После того как пользователь открыл первый мяу-момент, ему открывается каталог с новыми идеями. Пользователь может лайкать понравившиеся моменты, сохраняя их в свою коллекцию. Также мы запустили конкурс фотографий, чтобы пользователи делились своими личными мяу-моментами.</p>
     </div>
   </section>
 </div>
