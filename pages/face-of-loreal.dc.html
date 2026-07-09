@@ -34,6 +34,7 @@ a{color:inherit;}
   [style*="border-right-color: rgb(214, 214, 214)"]{border-right-width:0 !important;}
   [style*="justify-content: space-between"]{flex-wrap:wrap !important;gap:8px;}
   img[aria-hidden="true"][style*="position: absolute"]{display:none !important;}
+  .case-video{width:100% !important;}
   [style*="rotate(-1.6deg)"]{width:100% !important;transform:rotate(-1.6deg) !important;}
   a[href*="vimeo"] span[style*="border-radius: 50%"],a[href*="oneclub"] span[style*="border-radius: 50%"],a[href*="dandad"] span[style*="border-radius: 50%"],a[href*="rutube"] span[style*="border-radius: 50%"],a[href*="figma"] span[style*="border-radius: 50%"],a[href*="dreamies"] span[style*="border-radius: 50%"]{width:46px !important;height:46px !important;}
   img[src*="about-portrait"], img[src*="education-portrait"]{max-width:70% !important;}
@@ -101,14 +102,13 @@ a{color:inherit;}
     <h1 style="font-family:'Cormorant',serif;font-weight:400;font-size:clamp(26px,4vw,52px);line-height:.92;letter-spacing:.01em;text-transform:uppercase;margin-top:8px;">The Face of L'Oréal Paris</h1>
   </header>
 
-  <!-- ===== COVER + PLAY ===== -->
+  <!-- ===== VIDEO ===== -->
   <section style="position:relative;padding:34px 0 0;">
-    <img src="../assets/home/work-face-of-loreal.jpg" alt="The Face of L'Oréal Paris" style="width:78%;display:block;transform:rotate(-1.6deg);background:transparent;" />
-    <a href="https://www.dandad.org/work/new-blood-archive/the-face-of-lor%C3%A9al-paris" target="_blank" rel="noopener" style="text-decoration:none;display:flex;align-items:center;gap:13px;width:max-content;margin:26px 0 0;">
-      <span style="width:58px;height:58px;border-radius:50%;border:1.5px solid #111;background:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;"><span style="display:block;width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:13px solid #111;margin-left:4px;"></span></span>
-      <span style="font-family:'Fira Mono',monospace;font-size:13px;letter-spacing:.18em;text-transform:uppercase;">Play</span>
-    </a>
+    <div class="case-video" style="position:relative;width:78%;padding-top:43.88%;background:#000;">
+      <iframe src="https://player.vimeo.com/video/1208337064?title=0&byline=0&portrait=0" style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="The Face of L'Oréal Paris"></iframe>
+    </div>
     <img src="../assets/scribble/squiggle3.png" alt="" aria-hidden="true" style="position:absolute;right:-10px;top:-6px;width:150px;opacity:.85;pointer-events:none;" />
+    <a href="https://www.dandad.org/work/new-blood-archive/the-face-of-lor%C3%A9al-paris" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;width:max-content;margin:22px 0 0;font-family:'Fira Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid #111;padding-bottom:3px;">Смотреть на D&amp;AD →</a>
   </section>
 
   <!-- ===== TEXT COLUMNS ===== -->
@@ -142,8 +142,26 @@ a{color:inherit;}
     <img src="../assets/scribble/squiggle1.png" alt="" aria-hidden="true" style="position:absolute;right:0;top:0;width:160px;opacity:.8;pointer-events:none;" />
   </section>
 </div>
+  <!-- ===== REVIEWS ===== -->
+<div style="max-width:1140px;margin:0 auto;padding:6px 40px 0;">
+  <section data-screen-label="Reviews">
+    <div style="font-family:'Fira Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a9a9a;margin-bottom:20px;">Отзывы жюри</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+      <div style="border-top:1px solid #111;padding-top:16px;break-inside:avoid;">
+        <span style="font-family:'Cormorant',serif;font-size:48px;line-height:0;position:relative;top:14px;">“</span>
+        <p style="font-family:'Cormorant',serif;font-style:italic;font-size:20px;line-height:1.36;">Мы присудили The Face of L'Oréal Yellow Pencil. Причина в том, что работа действительно выделилась: это очень простая, своевременная и продуманная идея. Просто потрясающая работа!</p>
+        <p style="font-family:'Cormorant',serif;font-style:italic;font-size:20px;line-height:1.36;margin-top:14px;">Она про возможность дать отпор. Из этой идеи можно сделать много очень простых спецпроектов — и получить большой эффект.</p>
+      </div>
+      <div style="border-top:1px solid #111;padding-top:16px;break-inside:avoid;">
+        <span style="font-family:'Cormorant',serif;font-size:48px;line-height:0;position:relative;top:14px;">“</span>
+        <p style="font-family:'Cormorant',serif;font-style:italic;font-size:20px;line-height:1.36;">Мы как жюри увидели эту работу и сказали: это оно! Вы предлагаете изменение через очень-очень простую идею, которая решает социальную проблему в понятном и простом формате.</p>
+        <p style="font-family:'Cormorant',serif;font-style:italic;font-size:20px;line-height:1.36;margin-top:14px;">И самое приятное — это ощущается как идея, которую L'Oréal действительно мог бы взять и реализовать. Браво!</p>
+      </div>
+    </div>
+  </section>
+</div>
   <!-- ===== GALLERY ===== -->
-  <section data-screen-label="Gallery" style="background:#111;padding:50px 0;">
+  <section data-screen-label="Gallery" style="background:#111;padding:50px 0;margin-top:30px;">
     <div style="max-width:900px;margin:0 auto;padding:0 40px;">
       <img src="../assets/cases/face-of-loreal/g4.jpg" alt="" style="width:100%;display:block;box-shadow:0 12px 36px rgba(0,0,0,.5);" />
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;">
